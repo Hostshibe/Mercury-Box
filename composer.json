@@ -1,0 +1,5 @@
+{
+    "require": {
+        "vizuaalog/pterodactyl-php": "^1.0"
+    }
+}
