@@ -93,7 +93,33 @@
 </fieldset>
 
 <fieldset>
+    <legend>Fontawesome</legend>
+    <table>
+    <tr>
+        <td><label>Use custom fontawesome CDN</label></td>
+        <td>
+            <input type="radio" name="fa_custom" value="1" id="fa_custom_1"/> <label for="fa_custom_1">Yes</label> <input type="text" name="fa_cdn_url_custom" value="" placeholder="CDN URL"/>
+            <br>
+            <input type="radio" name="fa_custom" value="0" id="fa_custom_0" checked="checked"/> <label for="fa_custom_0">No</label>
+        </td>
+    </tr>
+    <tr>
+        <br/>
+        <td><label>Fontawesome version</label></td>
+        <td>
+            <label for="fa_v6"><input type="checkbox" name="fa_v6" value="1" id="fa_v6"/> V6</label><br/>
+            <label for="fa_v5"><input type="checkbox" name="fa_v5" value="1" id="fa_v5"/> V5</label><br/>
+            <label for="fa_v4"><input type="checkbox" name="fa_v4" value="1" id="fa_v4"/> V4</label><br/>
+            <label for="fa_v3"><input type="checkbox" name="fa_v3" value="1" id="fa_v3"/> V3</label><br/>
+        </td>
+    </tr>
+</table>
+</fieldset>
+
+<fieldset>
     <legend>Home page</legend>
+    <h3>Favicon</h3>
+    <label for="favicon_enabled"><input type="checkbox" name="favicon_enabled"/> Enable favicon</label> <input type="text" name="favicon_url" value="" placeholder="Favicon URL"/>
 	<h3>Logged in</h3>
     <table>
         <tr>
@@ -209,7 +235,7 @@
 </fieldset>
 
 <fieldset>
-    <legend>Extra buttons</legend>
+    <legend>Buttons on manage page</legend>
     <table>
     <tr>
         <td><label>Show manage page buttons</label></td>
@@ -250,41 +276,42 @@
 </fieldset>
 
 <fieldset>
-    <legend>Manage page links</legend>
+    <legend>Sidebar buttons</legend>
+    <p>Most <a href="https://fontawesome.com/v4/icons/">Fontawesome 4</a> icons will work with BoxBilling</p><br>
     <table>
     <tr>
-        <td><label>Show manage page links</label></td>
+        <td><label>Show sidebar buttons</label></td>
         <td>
-            <input type="radio" name="show_manage_links" value="1" id="show_manage_links_1" checked="checked"/> <label for="show_manage_links_1">Yes</label>
-            <input type="radio" name="show_manage_links" value="0" id="show_manage_links_0" /> <label for="show_manage_links_0">No</label>
+            <input type="radio" name="show_sidebar_buttons" value="1" id="show_sidebar_buttons_1" checked="checked"/> <label for="show_sidebar_buttons_1">Yes</label>
+            <input type="radio" name="show_sidebar_buttons" value="0" id="show_sidebar_buttons_0" /> <label for="show_sidebar_buttons_0">No</label>
         </td>
     </tr>
 </table>
     <br>
     <table>
         <tr>
-            <td><label>Link #1</label></td>
-            <td><input type="checkbox" name="link_1_enabled"/> <input type="text" name="link_1_title" value=""/> -> <input type="text" name="link_1_page"/></td>
+            <td><label>Button #1</label></td>
+            <td><input type="checkbox" name="sidebar_button_1_enabled"/> <input type="text" name="sidebar_button_1_icon" value="" placeholder="Icon"/> <input type="text" name="sidebar_button_1_title" value="" placeholder="Label"/> -> <input type="text" name="sidebar_button_1_page" placeholder="Destination"/></td>
         </tr>
 
         <tr>
-            <td><label>Link #2</label></td>
-            <td><input type="checkbox" name="link_2_enabled"/> <input type="text" name="link_2_title" value=""/> -> <input type="text" name="link_2_page"/></td>
+            <td><label>Button #2</label></td>
+            <td><input type="checkbox" name="sidebar_button_2_enabled"/> <input type="text" name="sidebar_button_2_icon" value="" placeholder="Icon"/> <input type="text" name="sidebar_button_2_title" value="" placeholder="Label"/> -> <input type="text" name="sidebar_button_2_page" placeholder="Destination"/></td>
         </tr>
 
         <tr>
-            <td><label>Link #3</label></td>
-            <td><input type="checkbox" name="link_3_enabled"/> <input type="text" name="link_3_title" value=""/> -> <input type="text" name="link_3_page"/></td>
+            <td><label>Button #3</label></td>
+            <td><input type="checkbox" name="sidebar_button_3_enabled"/> <input type="text" name="sidebar_button_3_icon" value="" placeholder="Icon"/> <input type="text" name="sidebar_button_3_title" value="" placeholder="Label"/> -> <input type="text" name="sidebar_button_3_page" placeholder="Destination"/></td>
         </tr>
 
         <tr>
-            <td><label>Link #4</label></td>
-            <td><input type="checkbox" name="link_4_enabled"/> <input type="text" name="link_4_title" value=""/> -> <input type="text" name="link_4_page"/></td>
+            <td><label>Button #4</label></td>
+            <td><input type="checkbox" name="sidebar_button_4_enabled"/> <input type="text" name="sidebar_button_4_icon" value="" placeholder="Icon"/> <input type="text" name="sidebar_button_4_title" value="" placeholder="Label"/> -> <input type="text" name="sidebar_button_4_page" placeholder="Destination"/></td>
         </tr>
 
         <tr>
-            <td><label>Link #5</label></td>
-            <td><input type="checkbox" name="link_5_enabled"/> <input type="text" name="link_5_title" value=""/> -> <input type="text" name="link_5_page"/></td>
+            <td><label>Button #5</label></td>
+            <td><input type="checkbox" name="sidebar_button_5_enabled"/> <input type="text" name="sidebar_button_5_icon" value="" placeholder="Icon"/> <input type="text" name="sidebar_button_5_title" value="" placeholder="Label"/> -> <input type="text" name="sidebar_button_5_page" placeholder="Destination"/></td>
         </tr>
 
     </table>
@@ -331,6 +358,7 @@
             <td>
                 <label for="show_client_balance"><input type="checkbox" name="show_client_balance" value="1" id="show_client_balance"/> Show Client balance</label><br/>
 				<label for="show_client_emails"><input type="checkbox" name="show_client_emails" value="1" id="show_client_emails"/> Show Emails sent to client</label><br/>
+                <label for="header_icon_enabled"><input type="checkbox" name="header_icon_enabled"/> Enable header icon</label> <input type="text" name="header_icon_url" value="" placeholder="Header icon URL"/>
             </td>
         </tr>
     </table>

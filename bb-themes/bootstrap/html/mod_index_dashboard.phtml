@@ -62,32 +62,22 @@
 				</div>
 				{% endif %}	
 				
-				{% if settings.dash_support %}
 				<div class="col-md-6">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4>
-								<i class="fa fa-life-ring"></i> {% trans 'Support' %}
-								{% if client.support_ticket_get_list({"status":'on_hold'}).total > 0 %}
-									<span class="label label-warning">{{ client.support_ticket_get_list({"status":'on_hold'}).total }} {{ mf.status_name("on_hold") }}</span>
-								{% endif %}
-								<a class="btn btn-default btn-xs pull-right" href="{{ 'support'|link }}">{% trans 'All tickets' %}</a>
+							<i class="fa fa-share-square-o" aria-hidden="true"></i> {% trans 'Socials' %}
 							</h4>
 						</div>
 						<div class="list-group text-center">
-							{% set tickets_on_hold = client.support_ticket_get_list({"status":'on_hold'}) %}
-							{% for i, ticket in tickets_on_hold.list %}
-								<a href="{{ 'support/ticket'|link }}/{{ticket.id}}" class="list-group-item">{{ticket.subject}} <span class="label label-default">{{ticket.helpdesk.name}}</span> <span class="label label-warning">{{ mf.status_name(ticket.status) }}</span></a>
-							{% endfor %}
-							{% set tickets_open = client.support_ticket_get_list({"status":'open'}) %}
-							{% for i, ticket in tickets_open.list %}
-								<a href="{{ 'support/ticket'|link }}/{{ticket.id}}" class="list-group-item">{{ticket.subject}} <span class="label label-default">{{ticket.helpdesk.name}}</span></a>
-							{% endfor %}
-							<a class="list-group-item list-group-item-info" href="{{ 'support'|link({'ticket' : 1}) }}">{% trans 'New ticket' %}</a>
+							<a class="list-group-item list-group-item-primary" href="https://twitter.com/hostshibe">{% trans 'Twitter' %}</a>
+							<a class="list-group-item list-group-item-primary" href="https://instagram.com/hostshibe">{% trans 'Instagram' %}</a>
+							<a class="list-group-item list-group-item-primary" href="https://discord.gg/xe8vkhBwgv">{% trans 'Discord' %}</a>
+							<a class="list-group-item list-group-item-primary" href="https://github.com/hostshibe">{% trans 'Github' %}</a>
+							<a class="list-group-item list-group-item-primary" href="https://www.youtube.com/channel/UCOVtqVXsdHlDf_wErtMsx7g">{% trans 'Youtube' %}</a>
 						</div>
 					</div>
 				</div>
-				{% endif %}	
 				
 				{% if settings.dash_invoices %}
 				<div class="col-md-6">
@@ -147,7 +137,7 @@
 						</div>
 						<div class="list-group">
 							{% for i, email in client.email_get_list({"per_page":5}).list %}
-							<a href="{{ 'email'|link }}/{{email.id}}" class="list-group-item">
+							<a href="{{ 'email'|link }}" class="list-group-item">
 								{{email.subject|truncate(30)}} <small>- {{ email.created_at|timeago }} {% trans 'ago' %}</small>
 							</a>
 							{% endfor %}
